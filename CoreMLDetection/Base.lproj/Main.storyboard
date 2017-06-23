@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gPW-dD-f9Q">
+    <device id="ipad10_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="HNA-vN-OYo">
+            <objects>
+                <viewController id="gPW-dD-f9Q" customClass="ViewController" customModule="CoreMLDetection" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides/>
+                    <view key="view" contentMode="scaleToFill" id="YJH-HT-2Wg">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monkey" translatesAutoresizingMaskIntoConstraints="NO" id="14x-6b-8gx">
+                                <rect key="frame" x="138.5" y="278" width="557" height="556"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="14x-6b-8gx" secondAttribute="height" multiplier="1:1" constant="1" id="OAF-1J-bqr"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="result" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QS-K4-She">
+                                <rect key="frame" x="138.5" y="844" width="557" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPH-RG-i1y">
+                                <rect key="frame" x="0.0" y="1068" width="834" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="mga-u4-nEE">
+                                        <connections>
+                                            <action selector="cameraButtonTapped:" destination="gPW-dD-f9Q" id="ar4-ue-qop"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Nov-BZ-keK"/>
+                                    <barButtonItem title="Pick image" id="SyK-oA-DpJ">
+                                        <connections>
+                                            <action selector="pickImageTapped:" destination="gPW-dD-f9Q" id="Fzo-Df-VFu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="14x-6b-8gx" firstAttribute="centerX" secondItem="YJH-HT-2Wg" secondAttribute="centerX" id="D3Q-xY-rtY"/>
+                            <constraint firstItem="DPH-RG-i1y" firstAttribute="leading" secondItem="xbo-79-REk" secondAttribute="leading" id="FOm-Ga-Jtg"/>
+                            <constraint firstItem="9QS-K4-She" firstAttribute="top" secondItem="14x-6b-8gx" secondAttribute="bottom" constant="10" id="I5q-Kd-hFA"/>
+                            <constraint firstItem="DPH-RG-i1y" firstAttribute="leading" secondItem="YJH-HT-2Wg" secondAttribute="leading" id="NFx-TL-4mC"/>
+                            <constraint firstItem="9QS-K4-She" firstAttribute="leading" secondItem="14x-6b-8gx" secondAttribute="leading" id="Qxk-3u-vDT"/>
+                            <constraint firstItem="xbo-79-REk" firstAttribute="trailing" secondItem="DPH-RG-i1y" secondAttribute="trailing" id="TAH-NX-6UQ"/>
+                            <constraint firstItem="xbo-79-REk" firstAttribute="trailing" secondItem="DPH-RG-i1y" secondAttribute="trailing" id="bJ6-mm-7Tr"/>
+                            <constraint firstItem="14x-6b-8gx" firstAttribute="centerY" secondItem="YJH-HT-2Wg" secondAttribute="centerY" id="eh2-KL-JfV"/>
+                            <constraint firstItem="14x-6b-8gx" firstAttribute="height" secondItem="YJH-HT-2Wg" secondAttribute="height" multiplier="0.5" id="hVy-rj-bC6"/>
+                            <constraint firstItem="9QS-K4-She" firstAttribute="trailing" secondItem="14x-6b-8gx" secondAttribute="trailing" id="jRu-p4-bWh"/>
+                            <constraint firstItem="DPH-RG-i1y" firstAttribute="bottom" secondItem="xbo-79-REk" secondAttribute="bottom" id="zwZ-Ov-eMN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xbo-79-REk"/>
+                    </view>
+                    <connections>
+                        <outlet property="pickedImageView" destination="14x-6b-8gx" id="7gw-GK-cPT"/>
+                        <outlet property="resultLabel" destination="9QS-K4-She" id="QYl-xM-vp0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kXh-9v-1sS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-70" y="231"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="monkey" width="900" height="900"/>
+    </resources>
+</document>
